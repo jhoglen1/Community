@@ -1,0 +1,11 @@
+ language: node_js
+ node_js: node
+ services:
+     - mongodb
+deploy:
+  provider: heroku
+  api_key:
+    secure: fXdBZH+0rRkoNndBhVABXo4C2BNevakbU9oqBpw5cIkKHKkC2EUC9JVHbWOTsAVFXehK3XK7TGGdSc3iMCsqs3jfEpp48BbBDSbEaWbwS43W+aZSFG021WQf4RRZNmEP2WJP46ywTsVneOpAYlkKBAejA48WXVFzd1GOGnNFU9DeH7YPyOVWpTj4iovZ8KLRV1sXaEMs67z52uCLUB8aNJAVlSyafPVSTjngRaBHJAwjeunZS0JY1n7QwxF8WAE4JFeFPMTAE8lg0kEjHDA/U/MIvrvUeOA629RaV5yor3moWw+rJgStjUMs1W8SQoYiO9nikjeHu7gDvcXx/QNmbVH9ombqXnIiKMI/y14krz9iEp+NjQ+8EB8EHPBW7QxELRF1Bbv9zCw1ITDnvs50GQYYVqmddxHbHl+sbxBRYWXtz3VJTtVFXTQMSvWZXRwKmaf7Qq5/DVdGM5Sr7CTjjmaCOhLEoVqHntDD/XviVJM/qPyYPXVxyKPSIpL4peG4D57U/xFJO72UIpw06XqwaNgHfx3KFpqF9Taq0s4SWgh2YKV2YZJgHex5n2J3xAsfdK6HCQ9ELXdnBxwm+tylsMC5wIk4sqFJEX1QAKo5MIsK6oeP22rQsFZknaWHRgynxzzh0kODBseyLs/EjyUlrc+h8QfRVhGUeYL0tGjhvtM=
+  app: Community
+  on:
+    repo: jhoglen1/Community
