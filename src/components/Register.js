@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router-dom";
-
+import MainPage from './MainPage';
 
 
 
@@ -10,6 +10,10 @@ class Register extends Component {
   goToHome= props =>{
     console.log("going to home page");
     this.props.history.push (`/`);
+}
+goToMainPage= props =>{
+  console.log("going to main page");
+  this.props.history.push(`/MainPage`);
 }
   render() {
         
@@ -21,39 +25,44 @@ class Register extends Component {
         
         <form className="Registering" >
         <label>
-           First Name:
+           First Name:&nbsp;&nbsp;
             <input 
       type="text" 
-     required /> 
+     required 
+     placeholder="First Name" /> 
       </label> <br/><br/>
       <label>
-          Last Name:
+          Last Name:&nbsp;&nbsp;
           <input 
       type="text" 
-     required />  </label> <br/><br/>
+     required 
+     placeholder="Last Name" />  </label> <br/><br/>
      <label>
-         User Name:
+         User Name:&nbsp;&nbsp;
    
         <input 
       type="text" 
-     required />    
+     required
+     placeholder="User Name"  />    
      </label><br/><br/>
       <label>
-          Password:
+          Password:&nbsp;&nbsp;
       <input 
       type="text" 
      required 
-     
+     placeholder="Password" 
       />  </label> <br/><br/>
       <label>
-          Verify Password:
+          Verify Password:&nbsp;&nbsp;
        <input 
       type="text" 
      required 
+     placeholder="Verify Password" 
     
       /> </label> <br/><br/>
-      <button type="submit">Sign up </button>
-      <button onClick={this.goToHome}>Back</button> 
+      <button className="about" onClick={this.goToMainPage}>Create</button>
+      &nbsp;&nbsp;
+      <button className="about" onClick={this.goToHome}>Back</button> 
       </form>
      
       </div>

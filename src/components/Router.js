@@ -4,6 +4,7 @@ import App from './App';
 import MainPage from './MainPage';
 import Register from './Register';
 import NotFound from './NotFound';
+import Review from './Review'
 
 
 const Router = () => (
@@ -12,6 +13,7 @@ const Router = () => (
         <Route exact path="/" component ={App} />
         <Route exact path="/MainPage/" component={MainPage} />
         <Route exact path="/Register/" component={Register} />
+        <Route exact path="/Review/" component={Review} />
         <Route component={NotFound} />       
     </Switch>
     </BrowserRouter>

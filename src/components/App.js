@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import NavBar from './NavBar';
 import About from './About';
-import Boxes from './Boxes';
 import MainPage from './MainPage';
 
 class App extends React.Component {
@@ -14,7 +13,7 @@ class App extends React.Component {
     <NavBar/>
     </div>
          <About/>
-         <Boxes/>
+         
        
          
              </div>
