@@ -1,12 +1,18 @@
 
-import React, {Component} from 'react';
+import React from 'react';
 import { withRouter } from "react-router-dom";
-import Register from './Register';
-import MainPage from './MainPage';
+import { API_BASE_URL } from "../config";
 
 
 
- class About extends React.Component  {
+
+
+
+
+ export class About extends React.Component  {
+
+
+
   goToRegister= props =>{
     console.log("going to register page");
     this.props.history.push(`/Register`);
@@ -14,8 +20,67 @@ import MainPage from './MainPage';
 goToMainPage= props =>{
     console.log("going to main page");
     this.props.history.push(`/MainPage`);
+
 }
+
+
+
+getData(e){
+    e.preventDefault();
+   
+
+
+  
+    function data(e) {
+   return(
+    fetch(`${API_BASE_URL}/api/authorize/login`),{
+        
+    method: 'GET', // *GET, POST, PUT, DELETE, etc.
+    headers: {
+         'Content-Type': 'application/json',
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    
+   
+    body: JSON.stringify(data), // body data type must match "Content-Type" header
+}
+
+    
+ .then(res => {
+        if (!res.ok)  {
+            return Promise.reject(res.statusText);
+        }
+        
+        return res.json();
+         
+    })
+    .then(MainPage =>
+        this.setState({
+            reviews: [],
+          
+        })
+    )
+    
+    .catch(err =>
+        this.setState({
+            error: 'Could not load',
+           
+        })
+        
+    )
+           );
+    }
+
+
+}
+
+
+
+
+
    render(){
+
+   
   return (
      <div className ="info">
       <header className="App-header">
@@ -32,32 +97,34 @@ goToMainPage= props =>{
      
       <h2>Cheers!</h2>
      
-  <nav>
-    <form className="LogIn" >
-       <input 
-      type="text" 
-     required 
-      placeholder="Username" 
-      /><br/><br/>
-      <input 
-      type="text" 
-     required 
-      placeholder="Password" 
-      />
-      <br/><br/>
-        <button className="about" onClick={this.goToMainPage}>Log in</button>
-        &nbsp;&nbsp;
-        
+  <div>
+  <form onSubmit={e => this.getData(e)}>
+        <label htmlFor="username">Username</label> <br/> 
+      
+        <input id="username" name="username" type="text" /> <br/>
+        <label htmlFor="password">Password</label> <br/>
+        <input id="password" name="password" type="password" /> <br/>
+
+        <br/>
+       
+           
+            <button className="about" type="submit"> Submit </button>
+        </form>
+   
+      
+     <br/>
         <button className="about" onClick={this.goToRegister}>Register</button>
-      </form>
      
-              </nav>
+     
+              </div>
+              </div>
 
 
      
              
- </div>
+
   );
 }
  }
+
 export default withRouter (About);

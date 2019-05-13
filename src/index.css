@@ -41,12 +41,22 @@ li{
   margin-right:10px
   
 }
-input{
+input,select,textarea{
   margin-right:10px;
   font-size: 18px;
   border-radius: 5px;
   padding:10px;
   text-align: left;
+  text-align: center;
+}
+select{
+  margin-right:10px;
+  font-size: 18px;
+  border-radius: 5px;
+  padding:10px;
+  text-align: left;
+  width: 212px;
+  height: 45px;
 }
 
 .registering{
@@ -71,6 +81,7 @@ input{
   font-size: 20px;
   border-radius: 20px;
   padding:30px;
+ 
   
   }
   .rate{
@@ -105,4 +116,31 @@ input{
         font-size: 40px;
         
       }
+      .NavHome{
+        font-size: 18px;
+        border-radius: 5px;
+        padding:10px;
+        cursor: pointer;
+        float:right;
       
+
+        
+      }
+      .reviews{
+        text-align: center;
+        background-color:#4267b2;
+        color:whitesmoke;
+        width: 60%;
+        height: 100%;
+        margin:auto;
+        margin-top: 5%;
+        font-size: 18px;
+        border-radius: 20px;
+        padding:30px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        
+        }
+        .brewList{
+          text-align: left;
+        }
+       

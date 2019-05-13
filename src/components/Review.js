@@ -1,35 +1,25 @@
-import React, {Component} from 'react';
-import { withRouter } from "react-router-dom";
-import NavBar from './NavBar';
+import React from 'react';
+import Reviewed from './Reviewed';
+
+
 
 
 
 class Review extends React.Component {
+ 
 
-  goToHome= props =>{
-    console.log("going to home page");
-    this.props.history.push(`/`);
-}
+ 
     render(){
-       
-
-      return (
+           return (
          
-         <div>
-    
-          <NavBar/>
+         <div className="beers">
          
-          <div className="ReviewBox">
-         <h1>Brew Reviews</h1>
-          <br/>
-          <br/>
-          <br/>
+         <Reviewed addReviews={this.props.addReviews}/>
         
-          <button className="homes" onClick={this.goToHome}>home</button>
-          </div>
+       
           </div>
          
       );
       }
     }
-export default withRouter (Review);
+export default Review;
