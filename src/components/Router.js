@@ -6,6 +6,7 @@ import Register from './Register';
 import NotFound from './NotFound';
 import Review from './Review'
 import MainPage from "./MainPage";
+import login from './login';
 
 
 
@@ -15,6 +16,7 @@ const Router = () => (
         <Route exact path="/" component ={About} />
         <Route exact path="/MainPage/" component={App} />
         <Route exact path="/Register/" component={Register} />
+        <Route exact path="/login/" component={login} />
         <Route exact path="/Review/" component={Review} />
         <Route exact path="/api/protected" component={App} />
         <Route exact path="/api/user" component={MainPage} />

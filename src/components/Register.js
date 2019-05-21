@@ -1,5 +1,5 @@
-import React, {  useState} from 'react';
-
+import React from 'react';
+import { withRouter } from "react-router-dom";
 import { API_BASE_URL } from "../config";
 import NavBar from './NavBar';
 
@@ -7,43 +7,47 @@ import NavBar from './NavBar';
 
 
 
-export default function Register() {
+class Register extends React.Component {
 
 
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-
-  
  
 
 
 
-  const handleSubmit = e => {
+   handleSubmit = e => {
     e.preventDefault();
-    e.currentTarget.reset();
+   
+   
+   
 
     const headers = {
       "Content-Type": "application/json",
       Accept: "application/json"
     };
-
+    let userName = e.currentTarget.userName.value;
+    let passWord= e.currentTarget.passWord.value;
+    let firstName= e.currentTarget.firstName.value;
+    let lastName= e.currentTarget.lastName.value;
+    e.currentTarget.reset();
     return fetch(`${API_BASE_URL}api/user`, {
       method: "POST",
       headers,
       body: JSON.stringify({
-        username,
-        password,
-        firstName,
-        lastName
+        username: userName,
+        password: passWord,
+        firstname: firstName,
+        lastname: lastName
        })
     })
       
       .then(res => {
         return res.json();
       })
-      .then(res=>console.log(res))
+      .then(res=> {
+        window.location.href ="./MainPage"
+      })
+
+    
             .catch(err => {
         let message;
         if (err.code === 422) {
@@ -55,13 +59,14 @@ export default function Register() {
         }
         return message
        
+      
       });
     };
   
-  
-    
+ 
 
   
+  render(){
         
       
     return (
@@ -72,50 +77,57 @@ export default function Register() {
           <h2>Create a profile</h2>
       
         
-          <form className="registering" onSubmit={handleSubmit}>
-        <label>
+          <form className="registering" onSubmit={this.handleSubmit} >
+         
+          
+        <label className="boxe">
            First Name:
             <input 
-      type="text" 
-     required 
-     placeholder="First Name" /> 
+     name="firstName" type="text" required placeholder="First Name" /> 
       </label> <br/><br/>
-      <label>
+      <label className="boxee">>
           Last Name: 
           <input 
+          name="lastName"
       type="text" 
      required 
      placeholder="Last Name" />  
      </label><br/><br/>
-     <label>
+     <label className="boxeee">
   User Name:
   <input 
+  name="userName"
     type="text" 
      required
      placeholder="User Name" />    
      </label><br/><br/>
-      <label>
-          Password:
+      <label className="boxes">>
+      Password:  
        <input 
+       name="passWord"
       type="password" 
      required 
      placeholder="Password" 
       />  </label> <br/><br/>
-      <label>
+      <label className="boxes">>
           Password:
        <input 
       type="password" 
      required 
      placeholder="Verify Password" /> </label> <br/><br/>
-      <button className="about" type="Submit">Create</button>
+      <button className="about" type="Submit" >Create</button>
+     
       &nbsp;&nbsp;
+      
      
       </form> 
+     
     
       </div>
      
       </div>
     );
+    }
   }
 
-
+  export default withRouter (Register);

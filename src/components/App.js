@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBar from './NavBar';
 import Review from './Review';
-
+import { API_BASE_URL } from "../config";
 
 
 
@@ -28,13 +28,56 @@ class App extends React.Component {
 
 
  onDelete = (i) => {
- console.log("delte commit");
- const del = this.state.reviews
- del.splice(i,1)
- this.setState({reviews: del})
+ console.log("delete commit");
+ const id = this.state.reviews
+ id.splice(i,1)
+ this.setState({reviews: id})
 
- 
+ const headers = {
+  "Content-Type": "application/json",
+  Accept: "application/json"
+
 };
+
+
+
+
+
+return fetch(`${API_BASE_URL}brewery/:id`, {
+  method: "DELETE",
+  headers,
+  body: JSON.stringify({
+    id: "" })
+ 
+})
+.then(res => {
+ 
+})
+.then(res=> {
+  
+})
+
+
+.catch(err => {
+  let message;
+  if (err.code === 422) {
+    message = err.message;
+  } else if (err.code === 500) {
+    message = "Internal server error";
+  } else {
+    message = "Something went wrong, please try again later";
+  }
+  return message
+  
+   
+  });
+};
+
+
+
+
+
+
     
     render() {
       
@@ -47,7 +90,7 @@ class App extends React.Component {
     return (
       <div className="CommunityBrews">
    <div className="appForm">
-    <NavBar/>
+    <NavBar />
     </div>
  <Review  addReviews={this.addReviews} />
 
@@ -58,6 +101,7 @@ class App extends React.Component {
     {this.state.reviews.map(beers => {
       
       return(
+       
         <ul className="brewList">
         <li> {beers.Date} </li><br/><br/>
        <li>{beers.User}</li> <br/><br/>
@@ -66,6 +110,7 @@ class App extends React.Component {
        <li>Brewery Location : {beers.BreweryLocation}</li><br/><br/>
        <li> Style of Beer: {beers.Style}</li><br/><br/>
        <li> Review: {beers.Review}</li><br/><br/>
+      
        <button  onClick={(this.onDelete)} className="delete" >Delete</button>
        <br/><br/><br/>
        </ul>
