@@ -6,12 +6,14 @@ import NavBar from './NavBar'
 export default function login() {
 
   
+  
 
    
     
     
     const handleSubmit = e => {
         e.preventDefault();
+        
         
               const headers = {
               "Content-Type": "application/json",
@@ -23,13 +25,13 @@ export default function login() {
           
             return fetch(`${API_BASE_URL}api/authorize/login`, {
               method: "POST",
-              
-              headers,
+               headers,
               body: JSON.stringify({
                 username: username,
                 password: password,
-             
+              
                })
+            
             })
           
               .then(res => {
@@ -57,6 +59,7 @@ export default function login() {
                
               });
             };
+            
       
           return(
 

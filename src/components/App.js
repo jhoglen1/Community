@@ -35,7 +35,8 @@ class App extends React.Component {
 
  const headers = {
   "Content-Type": "application/json",
-  Accept: "application/json"
+  Accept: "application/json",
+  
 
 };
 
@@ -46,10 +47,12 @@ class App extends React.Component {
 return fetch(`${API_BASE_URL}brewery/:id`, {
   method: "DELETE",
   headers,
+  
   body: JSON.stringify({
     id: "" })
- 
+  
 })
+
 .then(res => {
  
 })
