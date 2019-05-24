@@ -7,9 +7,9 @@ import Reviewed from './Reviewed';
 
 class Review extends React.Component {
  
-  componentWillMount(){
-    console.log("worked");
-     }
+
+
+
  
     render(){
            return (

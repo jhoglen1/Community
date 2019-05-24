@@ -4,14 +4,18 @@ import { withRouter } from "react-router-dom";
 
 
 
- class NavBar extends React.Component {
+ class Logout extends React.Component {
 
 
 
 
  
   
- 
+  handleSubmit = e => {
+    e.preventDefault()
+    localStorage.removeItem("authToken");
+    window.location.href ="./";
+  }
   goToHome= props =>{
     console.log("going to home page");
     this.props.history.push (`/`);
@@ -23,7 +27,7 @@ import { withRouter } from "react-router-dom";
          <form className="NavH" onSubmit={this.handleSubmit}>
   
      <h1>Community Brews
-   
+     <button className="NavHome" type="submit" onSubmit={this.handleSubmit}>log out</button>
      <button className="NavHome" type="button" onClick={this.goToHome}>Home</button>
      
     
@@ -35,7 +39,5 @@ import { withRouter } from "react-router-dom";
   }
 }
 
-export default withRouter(NavBar);
-
-
+export default withRouter(Logout);
 

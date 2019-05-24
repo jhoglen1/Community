@@ -41,7 +41,16 @@ class Register extends React.Component {
     })
       
       .then(res => {
-        return res.json();
+        if (res.ok){
+          return res.json();
+           }
+          
+           throw new Error( alert("This user already exists"));
+         
+        
+         
+
+
       })
       .then(res=> {
         window.location.href ="./MainPage"

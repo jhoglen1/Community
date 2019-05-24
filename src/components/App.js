@@ -1,11 +1,14 @@
 import React from 'react';
-import NavBar from './NavBar';
+import Logout from './Logout';
 import Review from './Review';
 import { API_BASE_URL } from "../config";
 
 
 
+
 class App extends React.Component {
+
+  
 
   onSubmit (event) {
     event.preventDefault();
@@ -16,6 +19,8 @@ class App extends React.Component {
 
     reviews:[]
   };
+
+
  addReviews = brews => {
    console.log('adding brews');
   let theReviews = this.state.reviews
@@ -27,11 +32,13 @@ class App extends React.Component {
  };
 
 
- onDelete = (i) => {
+ onDelete = (id) => {
  console.log("delete commit");
- const id = this.state.reviews
- id.splice(i,1)
- this.setState({reviews: id})
+ const reviewsId = this.state.reviews
+ reviewsId.splice(id,1)
+ this.setState({reviews: reviewsId})
+
+
 
  const headers = {
   "Content-Type": "application/json",
@@ -49,7 +56,7 @@ return fetch(`${API_BASE_URL}brewery/:id`, {
   headers,
   
   body: JSON.stringify({
-    id: "" })
+    })
   
 })
 
@@ -76,9 +83,75 @@ return fetch(`${API_BASE_URL}brewery/:id`, {
   });
 };
 
+componentWillMount(){
+  let authToken = localStorage.getItem("authToken");
+  const headers = {
+    "Content-Type": "application/json",
+    Authorization: "Bearer " + authToken
+    
+  
+  };
+fetch(`${API_BASE_URL}api/protected`,{headers:headers})
+
+.then(res=> {
+  if (res.ok){
+ return res.json();
+  }
+ 
+  throw new Error(  window.location.href ="./");
+
+})
+
+.then(res=> {
+  
+  console.log(res);
+})
+
+.catch(err =>console.log(err))
+
+}
+ 
 
 
+state = {
+  reviews:[]
+}
 
+componentDidMount() {
+  
+  this.addBeers();
+}
+
+addBeers() {
+  this.setState({
+      error: null,
+      loading: true
+  });
+  fetch(`${API_BASE_URL}brewery`)
+  
+      .then(res => {
+          if (!res.ok) {
+              return Promise.reject(res.statusText);
+          }
+          return res.json();
+      })
+      .then(addBeers =>{
+       
+          this.setState({
+              reviews: addBeers,
+              loading: false
+          })
+          
+        })
+      .catch(err =>
+        
+          this.setState({
+              error: 'Could not load ',
+              loading: false
+          })
+      );
+}
+ 
 
 
     
@@ -93,7 +166,7 @@ return fetch(`${API_BASE_URL}brewery/:id`, {
     return (
       <div className="CommunityBrews">
    <div className="appForm">
-    <NavBar />
+    <Logout />
     </div>
  <Review  addReviews={this.addReviews} />
 
@@ -110,7 +183,6 @@ return fetch(`${API_BASE_URL}brewery/:id`, {
        <li>{beers.User}</li> <br/><br/>
        <li>Brew Name: {beers.Brew} </li><br/><br/>
        <li>Brewery Name: {beers.Brewery}</li><br/><br/>
-       <li>Brewery Location : {beers.BreweryLocation}</li><br/><br/>
        <li> Style of Beer: {beers.Style}</li><br/><br/>
        <li> Review: {beers.Review}</li><br/><br/>
       
@@ -133,7 +205,12 @@ return fetch(`${API_BASE_URL}brewery/:id`, {
    </ul>
 
   
-        
+  
+ 
+   
+
+  
+   
          
        
          

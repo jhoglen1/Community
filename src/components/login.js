@@ -35,7 +35,11 @@ export default function login() {
             })
           
               .then(res => {
-                return res.json();
+                if (res.ok){
+                  return res.json();
+                   }
+                  
+                   throw new Error( alert("Username/Password was enter incorrectly! Try again!"));
                 
                 
               })
@@ -48,8 +52,10 @@ export default function login() {
             
                     .catch(err => {
                 let message;
-                if (err.code === 422) {
+                if (err.code === 401) {
+                 
                   message = err.message;
+                  
                 } else if (err.code === 500) {
                   message = "Internal server error";
                 } else {
@@ -62,12 +68,13 @@ export default function login() {
             
       
           return(
+          
 
 
 
         <div>
             <NavBar />
-        
+       
        
   <form className='login' onSubmit={handleSubmit} >
   
