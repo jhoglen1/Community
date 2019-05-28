@@ -39,7 +39,7 @@ export default function login() {
                   return res.json();
                    }
                   
-                   throw new Error( alert("Username/Password was enter incorrectly! Try again!"));
+                   throw new Error( window.confirm("Username/Password was enter incorrectly! Try again!"));
                 
                 
               })
@@ -65,6 +65,7 @@ export default function login() {
                
               });
             };
+            
             
       
           return(

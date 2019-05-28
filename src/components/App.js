@@ -186,7 +186,7 @@ addBeers() {
        <li> Style of Beer: {beers.Style}</li><br/><br/>
        <li> Review: {beers.Review}</li><br/><br/>
       
-       <button  onClick={(this.onDelete)} className="delete" >Delete</button>
+       <button className="about"  onClick={(this.onDelete)}  >Delete</button>
        <br/><br/><br/>
        </ul>
         

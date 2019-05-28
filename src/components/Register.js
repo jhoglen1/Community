@@ -40,36 +40,19 @@ class Register extends React.Component {
        })
     })
       
-      .then(res => {
-        if (res.ok){
-          return res.json();
-           }
-          
-           throw new Error( alert("This user already exists"));
-         
-        
-         
-
-
-      })
+    .then(res => {
+      if (res.ok){
+        return res.json();
+         }
+          throw new Error( window.confirm("User Name is taken. Try again."));
+           })
       .then(res=> {
-        window.location.href ="./MainPage"
+        window.location.href ="./Login"
       })
 
     
             .catch(err => {
-        let message;
-        if (err.code === 422) {
-          message = err.message;
-        } else if (err.code === 500) {
-          message = "Internal server error";
-        } else {
-          message = "Something went wrong, please try again later";
-        }
-        return message
-       
-      
-      });
+         });
     };
   
  

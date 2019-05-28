@@ -3,7 +3,9 @@ body{
   background-color:#e9ebee;
   }
 
-
+.button{
+  font-size: 10px;
+}
 
 
 .logo{
@@ -44,7 +46,7 @@ li{
 }
 input,select,textarea{
   margin-right:10px;
-  font-size: 18px;
+  font-size: 14px;
   border-radius: 5px;
   padding:10px;
   text-align: left;
@@ -130,11 +132,12 @@ select{
         
       }
       .NavHome{
-        font-size: 18px;
+        font-size: 16px;
         border-radius: 5px;
         padding:10px;
         cursor: pointer;
         float:right;
+       
       
 
         
@@ -143,7 +146,7 @@ select{
         text-align: center;
       background-color:#4267b2;
       color:whitesmoke;
-      width: 25%;
+      width: 50%;
       height: 75%;
       margin:auto;
       font-size: 20px;

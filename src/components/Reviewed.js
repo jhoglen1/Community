@@ -28,7 +28,7 @@ class Reviewed extends React.Component {
     let BrewStyle= e.currentTarget.BrewStyle.value;
     let Review= e.currentTarget.Review.value;
    
-    
+   
 
     return fetch(`${API_BASE_URL}brewery`, {
       method: "POST",
@@ -97,13 +97,9 @@ createBrews = event =>{
   console.log(brew);
   this.props.addReviews(brew);
   
-  
+ 
   
 };
-
-
-
-
 
 
     render(){
@@ -120,7 +116,7 @@ createBrews = event =>{
        
   
         <h3 className="rate">Review your brew</h3>
-        <input name="UserName" ref={this.usernameRef} type="text"placeholder="User" required/><br/><br/>
+        <input name="UserName" ref={this.usernameRef} type="text"placeholder="First Name Last Name" required/><br/><br/>
         <input name="Date" ref={this.dateRef} type="text"placeholder="Month/Day/Year" required/><br/><br/>
         <input name="BrewName" ref={this.brewRef} type="text"placeholder="Brew Name" required/><br/><br/>
       <input name="BreweryName" ref={this.breweryRef} type="text"placeholder="Brewery Name"required/> <br/><br/>
