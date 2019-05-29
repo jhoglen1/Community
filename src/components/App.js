@@ -8,7 +8,7 @@ import { API_BASE_URL } from "../config";
 
 class App extends React.Component {
 
-  
+ 
 
   onSubmit (event) {
     event.preventDefault();
@@ -32,56 +32,51 @@ class App extends React.Component {
  };
 
 
- onDelete = (id) => {
+
+ onDelete = (beers) => {
  console.log("delete commit");
- const reviewsId = this.state.reviews
- reviewsId.splice(id,1)
- this.setState({reviews: reviewsId})
-
-
-
- const headers = {
+ const beersId = this.state.reviews
+ beersId.splice(beers,1)
+ this.setState({
+   id: beers.id
+  });
+ 
+  const headers = {
   "Content-Type": "application/json",
-  Accept: "application/json",
-  
-
-};
-
-
-
-
-
-return fetch(`${API_BASE_URL}brewery/:id`, {
+  Accept: "application/json"
+  };
+ 
+return fetch(`${API_BASE_URL}brewery/${beers.id}`, {
   method: "DELETE",
   headers,
   
-  body: JSON.stringify({
+   body: JSON.stringify({
+     
+   
+    id: beers.id
     })
   
 })
 
-.then(res => {
+.then(res=>{
+  if (res.ok){
+    console.log(res) 
+ return res.json();
+  }
  
+  throw new Error("error");
+
 })
+
 .then(res=> {
   
+  console.log(res);
 })
 
+.catch(err =>console.log(err))
 
-.catch(err => {
-  let message;
-  if (err.code === 422) {
-    message = err.message;
-  } else if (err.code === 500) {
-    message = "Internal server error";
-  } else {
-    message = "Something went wrong, please try again later";
-  }
-  return message
-  
-   
-  });
-};
+}
+ 
 
 componentWillMount(){
   let authToken = localStorage.getItem("authToken");
@@ -185,8 +180,9 @@ addBeers() {
        <li>Brewery Name: {beers.Brewery}</li><br/><br/>
        <li> Style of Beer: {beers.Style}</li><br/><br/>
        <li> Review: {beers.Review}</li><br/><br/>
+       <li> id: {beers.id}</li><br/><br/>
       
-       <button className="about"  onClick={(this.onDelete)}  >Delete</button>
+       <button className="about"  onClick={(this.onDelete)}>Delete</button>
        <br/><br/><br/>
        </ul>
         

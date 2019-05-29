@@ -27,7 +27,7 @@ class Reviewed extends React.Component {
     let BreweryName= e.currentTarget.BreweryName.value;
     let BrewStyle= e.currentTarget.BrewStyle.value;
     let Review= e.currentTarget.Review.value;
-   
+    
    
 
     return fetch(`${API_BASE_URL}brewery`, {
@@ -90,7 +90,7 @@ createBrews = event =>{
     Brewery: this.breweryRef.current.value,
     Style: this.styleRef.current.value,
     Review: this.reviewRef.current.value,
-   
+    
    
   }
   
