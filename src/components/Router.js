@@ -7,6 +7,7 @@ import NotFound from './NotFound';
 import Review from './Review'
 import MainPage from "./MainPage";
 import login from './login';
+import Reviewed from './Reviewed';
 
 
 
@@ -18,6 +19,7 @@ const Router = () => (
         <Route exact path="/Register/" component={Register} />
         <Route exact path="/login/" component={login} />
         <Route exact path="/Review/" component={Review} />
+        <Route exact path="/Reviewed/" component={Reviewed} />
         <Route exact path="/api/protected" component={App} />
         <Route exact path="/api/user" component={MainPage} />
         <Route component={NotFound} />       

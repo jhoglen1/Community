@@ -1,16 +1,20 @@
 import React  from 'react';
 import { API_BASE_URL } from "../config";
-
+import Logout from "./Logout";
 
 
 
 
 class Reviewed extends React.Component {
 
+  goReview= props =>{
+    console.log("going to main page");
+    window.location.href="./MainPage";
+  
+  }
 
-
-   handleSubmit = e => {
-    e.preventDefault();
+   handleSubmit=e=> {
+    
    
   
   
@@ -41,14 +45,18 @@ class Reviewed extends React.Component {
         Brew: BrewName,
         Brewery: BreweryName,
         Style: BrewStyle,
-        Review: Review
+        Review: Review,
+    
        })
     })
       
       .then(res => {
         return res.json();
       })
-      .then(res=> console.log(res))
+      .then(res=>  {
+        
+      window.location.href="./MainPage"
+      })
     
             .catch(err => {
         let message;
@@ -91,11 +99,12 @@ createBrews = event =>{
     Style: this.styleRef.current.value,
     Review: this.reviewRef.current.value,
     
+    
    
   }
   
   console.log(brew);
-  this.props.addReviews(brew);
+  
   
  
   
@@ -106,12 +115,12 @@ createBrews = event =>{
        
 
       return (
-         
+       
      <div>
          
-         
+       
             
-        <form className="brews" onSubmit={this.createBrews}>
+        <main className="brews" onSubmit={this.createBrews}>
         <form className="brews" onSubmit={this.handleSubmit}>
        
   
@@ -123,14 +132,15 @@ createBrews = event =>{
       <input name="BrewStyle" ref={this.styleRef} type="text"placeholder="Brew Style"required/><br/><br/>
       
       <textarea name="Review" ref={this.reviewRef} placeholder="Review"required/>  <br/><br/>
-      
-      <button className="about" type="submit" >Review</button>
-      
+    
+      <button className="about" type="submit" >Review</button><br/><br/>
+     
+      <button className="about"  onClick={this.goReview} >Back to Reviews</button>  
        
       &nbsp;&nbsp;
         
          </form>
-         </form>
+         </main>
        
         
         

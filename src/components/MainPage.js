@@ -17,18 +17,18 @@ goToReview= props =>{
   this.props.history.push(`/Review`);
 }
 
- 
+
   
     render(){
        
 
       return (
          
-     <div>
-         
-         
-    
-        
+     <div className="buttons">
+         <form>
+         <button className="jeff" onClick={this.gotoReview}>Review Agagin</button>
+         </form>
+       
       </div>
     );
   }

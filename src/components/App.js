@@ -1,6 +1,6 @@
 import React from 'react';
 import Logout from './Logout';
-import Review from './Review';
+
 import { API_BASE_URL } from "../config";
 
 
@@ -8,10 +8,14 @@ import { API_BASE_URL } from "../config";
 
 class App extends React.Component {
 
- 
+  goToReview= props =>{
+    console.log("going to home page");
+    this.props.history.push(`/Review`);
+  }
 
   onSubmit (event) {
     event.preventDefault();
+    
   }
  
   
@@ -27,55 +31,52 @@ class App extends React.Component {
    theReviews.push(brews);
    this.setState({
      reviews: theReviews
+     
    });
-
+ 
  };
 
+ state = {
+  reviews:[]
+}
 
-
- onDelete = (beers) => {
+ handleSubmit= (beerid)=> {
  console.log("delete commit");
- const beersId = this.state.reviews
- beersId.splice(beers,1)
+ let brewPost = this.state.reviews
+ brewPost.splice(beerid,1)
+ console.log(beerid)
  this.setState({
-   id: beers.id
+ 
+   id: beerid
   });
+ 
+ 
  
   const headers = {
   "Content-Type": "application/json",
   Accept: "application/json"
   };
  
-return fetch(`${API_BASE_URL}brewery/${beers.id}`, {
+return fetch(`${API_BASE_URL}brewery/${beerid}`, {
   method: "DELETE",
-  headers,
+  headers: headers,
   
    body: JSON.stringify({
      
    
-    id: beers.id
+    id: beerid
     })
   
 })
 
-.then(res=>{
-  if (res.ok){
-    console.log(res) 
- return res.json();
-  }
- 
-  throw new Error("error");
-
-})
-
-.then(res=> {
-  
-  console.log(res);
-})
-
+.then(res=>{})
+.then(res=> {})
 .catch(err =>console.log(err))
 
 }
+
+
+
  
 
 componentWillMount(){
@@ -90,7 +91,7 @@ fetch(`${API_BASE_URL}api/protected`,{headers:headers})
 
 .then(res=> {
   if (res.ok){
- return res.json();
+ return res.json( );
   }
  
   throw new Error(  window.location.href ="./");
@@ -151,11 +152,11 @@ addBeers() {
 
     
     render() {
-      
      
-   
 
    
+
+    
     
     
     return (
@@ -163,26 +164,28 @@ addBeers() {
    <div className="appForm">
     <Logout />
     </div>
- <Review  addReviews={this.addReviews} />
+
 
      
     <ul className="reviews">
    <h1>Brew Reviews</h1>
-    
-    {this.state.reviews.map(beers => {
+   <button className="jeff" onClick={this.goToReview}>Review Agagin</button>
+    {this.state.reviews.map(beer => {
       
       return(
        
         <ul className="brewList">
-        <li> {beers.Date} </li><br/><br/>
-       <li>{beers.User}</li> <br/><br/>
-       <li>Brew Name: {beers.Brew} </li><br/><br/>
-       <li>Brewery Name: {beers.Brewery}</li><br/><br/>
-       <li> Style of Beer: {beers.Style}</li><br/><br/>
-       <li> Review: {beers.Review}</li><br/><br/>
-       <li> id: {beers.id}</li><br/><br/>
+        <li> {beer.Date} </li><br/><br/>
+       <li>{beer.User}</li> <br/><br/>
+       <li>Brew Name: {beer.Brew} </li><br/><br/>
+       <li>Brewery Name: {beer.Brewery}</li><br/><br/>
+       <li> Style of Beer: {beer.Style}</li><br/><br/>
+       <li> Review: {beer.Review}</li><br/><br/>
+       
+       
+       
       
-       <button className="about"  onClick={(this.onDelete)}>Delete</button>
+       <button className="about"  onClick={() => this.handleSubmit(beer.id)}>Delete</button>
        <br/><br/><br/>
        </ul>
         

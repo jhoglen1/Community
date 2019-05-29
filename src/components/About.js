@@ -22,7 +22,11 @@ goTologin= props =>{
     this.props.history.push(`/login`);
 
 }
+goToreviews= props =>{
+    console.log("going to main page");
+    this.props.history.push(`/MainPage`);
 
+}
  
 
  
@@ -79,6 +83,8 @@ goTologin= props =>{
         <button className="about" onClick={this.goToRegister}>Register</button>
         <br/> <br/>
         <button className="about" onClick={this.goTologin}>Log In</button>
+        <br/> <br/>
+        <button className="about" onClick={this.goToreviews}>Reviews</button>
      
               </div>
               </div>

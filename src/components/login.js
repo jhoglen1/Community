@@ -45,7 +45,7 @@ export default function login() {
               })
               .then(res=>{
                   localStorage.setItem("authToken",res.authToken)
-                  window.location.href="./MainPage"
+                  window.location.href="./Reviewed"
                   
 
               })
