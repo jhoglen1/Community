@@ -80,7 +80,14 @@ select{
     margin-right:14%;
   }
 .about,.homes{
-  font-size: 18px;
+  font-size: 16px;
+  border-radius: 5px;
+  padding:10px;
+  cursor: pointer;
+  
+}
+.again{
+  font-size: 14px;
   border-radius: 5px;
   padding:10px;
   cursor: pointer;

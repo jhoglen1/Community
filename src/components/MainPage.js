@@ -24,10 +24,8 @@ goToReview= props =>{
 
       return (
          
-     <div className="buttons">
-         <form>
-         <button className="jeff" onClick={this.gotoReview}>Review Agagin</button>
-         </form>
+     <div >
+        
        
       </div>
     );
@@ -35,8 +33,3 @@ goToReview= props =>{
   }
   
   export default MainPage;
-
-  
-  
-
-  

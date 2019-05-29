@@ -14,13 +14,7 @@ class Reviewed extends React.Component {
   }
 
    handleSubmit=e=> {
-    
-   
-  
-  
-   
-
-    const headers = {
+     const headers = {
       "Content-Type": "application/json",
       Accept: "application/json"
     };
@@ -115,10 +109,11 @@ createBrews = event =>{
        
 
       return (
-       
-     <div>
-         
-       
+     
+     
+     <div className="brewing">
+        <Logout/>
+        
             
         <main className="brews" onSubmit={this.createBrews}>
         <form className="brews" onSubmit={this.handleSubmit}>
@@ -133,7 +128,7 @@ createBrews = event =>{
       
       <textarea name="Review" ref={this.reviewRef} placeholder="Review"required/>  <br/><br/>
     
-      <button className="about" type="submit" >Review</button><br/><br/>
+      <button className="about" type="submit" >Submit</button><br/><br/>
      
       <button className="about"  onClick={this.goReview} >Back to Reviews</button>  
        
@@ -143,8 +138,8 @@ createBrews = event =>{
          </main>
        
         
-        
-      </div>
+         </div>
+    
     );
   }
   }
