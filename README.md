@@ -1,68 +1,38 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1> Community Brews </h1>
 
-## Available Scripts
+<p>This is a message board for people to come and talk about the recent beers they have had. They can be honest if they like 
+them or not.</p>
 
-In the project directory, you can run:
+https://secure-dusk-74453.herokuapp.com/
 
-### `npm start`
+<h2> Credentials </h2>
+Username: Janedoe <br/>
+Password: 123456
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+<h4> This the landing page talking about how you use the website </h4>
+<img width="1309" alt="Screen Shot 2019-05-30 at 12 12 43 AM" src="https://user-images.githubusercontent.com/45474374/58608099-05658c80-8270-11e9-94d6-2be774eea39d.png">
 
-### `npm test`
+<h4>This is the register form to set up and account </h4>
+<img width="1439" alt="Screen Shot 2019-05-30 at 12 18 32 AM" src="https://user-images.githubusercontent.com/45474374/58608256-bb30db00-8270-11e9-87b0-85036f075c21.png">
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<h4>Once you have created an account you'll be forwareded to the log in screen</h4>
+<img width="1440" alt="Screen Shot 2019-05-30 at 12 18 48 AM" src="https://user-images.githubusercontent.com/45474374/58608316-077c1b00-8271-11e9-9553-888f05a87c93.png">
 
-### `npm run build`
+<h4>Once you are logged in then you be sent to the review form where you'll start to review your beers</h4>
+<img width="1437" alt="Screen Shot 2019-05-30 at 12 19 18 AM" src="https://user-images.githubusercontent.com/45474374/58608377-3b574080-8271-11e9-9649-ef4febb330a8.png">
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<h4>Once you submit your review you will be sent to the read all the other reviews</h4>
+<img width="1440" alt="Screen Shot 2019-05-30 at 12 19 30 AM" src="https://user-images.githubusercontent.com/45474374/58608418-70639300-8271-11e9-858d-a48e0b4c0fae.png">
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+<h2>Tech Stack</h2>
+React<br/>
+Node.js<br/>
+Express<br/>
+HTML<br/>
+CSS<br/>
+Javascript<br/>
+MongoDB<br/>
+passport.js<br/>
+JWT Token<br/>
+bcrypt
