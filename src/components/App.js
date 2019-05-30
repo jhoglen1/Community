@@ -169,7 +169,7 @@ addBeers() {
      
     <ul className="reviews">
    <h1>Brew Reviews</h1>
-   <button className="again" onClick={this.goToReview}>Review Again</button>
+   <button className="again" onClick={this.goToReview}>Make a review</button>
     {this.state.reviews.map(beer => {
       
       return(

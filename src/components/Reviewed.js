@@ -130,7 +130,7 @@ createBrews = event =>{
     
       <button className="about" type="submit" >Submit</button><br/><br/>
      
-      <button className="about"  onClick={this.goReview} >Back to Reviews</button>  
+      <button className="about"  onClick={this.goReview} >Go to Reviews</button>  
        
       &nbsp;&nbsp;
         
