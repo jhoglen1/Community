@@ -70,8 +70,8 @@ goToreviews= props =>{
     
       <p> This is a community where you can come and talk <br/> 
       about your recent brews you have tried. The good, bad  <br/>
-      and ugly reviews are welcome. This is a friendly message <br/>
-      board and any inappropriate language  will not be tolerated. <br/>
+      and ugly reviews are welcome. Please let your friends <br/>
+      know about the site. The more the merrier!<br/>
       </p>
      
       <h2>Cheers!</h2>
