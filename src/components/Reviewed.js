@@ -26,8 +26,6 @@ class Reviewed extends React.Component {
     let BrewStyle= e.currentTarget.BrewStyle.value;
     let Review= e.currentTarget.Review.value;
 
-   console.log('test')
-
     return fetch(`${API_BASE_URL}brewery`, {
       method: "POST",
       headers,
