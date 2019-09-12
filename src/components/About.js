@@ -27,9 +27,6 @@ goToreviews= props =>{
     this.props.history.push(`/MainPage`);
 
 }
- 
-
- 
 
 
 
@@ -50,16 +47,19 @@ goToreviews= props =>{
 
 
 
- 
-    
-    
+
+
+
+
+
+
 
 
 
 
    render(){
 
-   
+
   return (
      <div className ="info">
       <header className="App-header">
@@ -67,31 +67,31 @@ goToreviews= props =>{
          Welcome to <div className="logo1">Community Brews</div>
         </h2>
        </header>
-    
-      <p> This is a community where you can come and talk <br/> 
+
+      <p> This is a community where you can come and talk <br/>
       about your recent brews you have tried. The good, bad  <br/>
       and ugly reviews are welcome. Please let your friends <br/>
-      know about the site. The more the merrier!<br/>
+      know about the site. Drink and be merrier!<br/>
       </p>
-     
+
       <h2>Cheers!</h2>
-     
+
   <div>
-  
-      
-    
+
+
+
         <button className="about" onClick={this.goToRegister}>Register</button>
         <br/> <br/>
         <button className="about" onClick={this.goTologin}>Log In</button>
         <br/> <br/>
         <button className="about" onClick={this.goToreviews}>Reviews</button>
-     
+
               </div>
               </div>
 
 
-     
-             
+
+
 
   );
 }
