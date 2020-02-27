@@ -9,8 +9,7 @@ import { API_BASE_URL } from "../config";
 class App extends React.Component {
 
   goToReview= props =>{
-    console.log("going to home page");
-    this.props.history.push(`/Review`);
+    this.props.history.push(`/Reviewed`);
   }
 
   onSubmit (event) {
@@ -26,7 +25,6 @@ class App extends React.Component {
 
 
  addReviews = brews => {
-   console.log('adding brews');
   let theReviews = this.state.reviews
    theReviews.push(brews);
    this.setState({
@@ -41,10 +39,8 @@ class App extends React.Component {
 }
 
  handleSubmit= (beerid)=> {
- console.log("delete commit");
  let brewPost = this.state.reviews
  brewPost.splice(beerid,1)
- console.log(beerid)
  this.setState({
  
    id: beerid
@@ -100,7 +96,7 @@ fetch(`${API_BASE_URL}api/protected`,{headers:headers})
 
 .then(res=> {
   
-  console.log(res);
+  //console.log(res);
 })
 
 .catch(err =>console.log(err))

@@ -2,18 +2,11 @@ import React  from 'react';
 import { API_BASE_URL } from "../config";
 import Logout from "./Logout";
 
-
-
-
 class Reviewed extends React.Component {
-
-  goReview= props =>{
-    console.log("going to main page");
+ goReview= props =>{
     window.location.href="./MainPage";
-
-  }
-
-   handleSubmit=e=> {
+}
+     handleSubmit=e=> {
      const headers = {
       "Content-Type": "application/json",
       Accept: "application/json"

@@ -3,10 +3,10 @@ import NavBar from './NavBar';
 
 
 
-const NotFound = () =>(
+const NotFound = () => (
     <div>
           <NavBar/>
-        <h2>not found!!!???????</h2>
+        <h2 style={{textAlign: "center", fontSize: "40px" }} >NOT FOUND!!!???????</h2>
       
     </div>
 );
@@ -15,4 +15,4 @@ const NotFound = () =>(
 
 
 
-export default NotFound;
+export default NotFound; 

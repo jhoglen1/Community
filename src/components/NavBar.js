@@ -12,7 +12,6 @@ import { withRouter } from "react-router-dom";
   
  
   goToHome= props =>{
-    console.log("going to home page");
     this.props.history.push (`/`);
 }
 

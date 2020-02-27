@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import Reviewed from './Reviewed';
 
 
@@ -25,4 +25,4 @@ class Review extends React.Component {
       );
       }
     }
-export default Review;
+export default Review; */

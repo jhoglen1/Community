@@ -18,7 +18,6 @@ import { withRouter } from "react-router-dom";
     window.location.href ="./";
   }
   goToHome= props =>{
-    console.log("going to home page");
     this.props.history.push (`/`);
 }
 

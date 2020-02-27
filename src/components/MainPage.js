@@ -9,12 +9,10 @@ class MainPage extends React.Component {
 
 
   goToHome= props =>{
-    console.log("going to home page");
     this.props.history.push(`/`);
 }
 goToReview= props =>{
-  console.log("going to home page");
-  this.props.history.push(`/Review`);
+  this.props.history.push(`/Reviewed`);
 }
 
 
